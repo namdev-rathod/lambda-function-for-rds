@@ -1,5 +1,4 @@
-# lambda-function-for-rds
- - Lambda Function To Connect MySQL RDS & Run Queries
+# Lambda Function To Connect MySQL RDS & Run Queries
  - Write lambda function in nodejs 18
  - Use AWS-SDK library
  - Password should stored in secret manager
@@ -30,7 +29,7 @@ exports.handler = async (event, context) => {
     });
 
     // Fetch record details from an RDS MySQL table
-    const [rows, fields] = await connection.execute('drop database demoawsdb');
+    const [rows, fields] = await connection.execute('create database demoawsdb');     // replace the mysql query here according to use cases
 
     // Process or return the record details
     console.log('Fetched records:', rows);
